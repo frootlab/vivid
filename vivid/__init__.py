@@ -38,4 +38,4 @@ __docformat__ = 'google'
 
 import brea as server
 import rian as client
-import deet as database
+import deet as db
