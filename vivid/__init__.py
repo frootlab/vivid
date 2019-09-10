@@ -23,7 +23,7 @@ applications, that interconnects collaborative data science with automated
 machine learning.
 
 """
-__version__ = '19.09'
+__version__ = '19.9.1'
 __license__ = 'GPLv3'
 __copyright__ = '2019 Frootlab'
 __description__ = 'Enterprise Machine-Learning and Predictive Analytics'
