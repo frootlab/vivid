@@ -19,58 +19,62 @@
 #
 """Setuptools based installation."""
 
-__copyright__ = '2019 Frootlab'
+__version__ = '19.09-3'
 __license__ = 'GPLv3'
-__docformat__ = 'google'
+__copyright__ = '2019 Frootlab'
+__description__ = 'Enterprise Machine-Learning and Predictive Analytics'
+__url__ = 'https://www.frootlab.org/vivid'
+__organization__ = 'Frootlab'
 __author__ = 'Frootlab Developers'
 __email__ = 'contact@frootlab.org'
 __authors__ = ['Patrick Michl <patrick.michl@frootlab.org>']
+__maintainer__ = 'Patrick Michl'
+__credits__ = ['Willi Jäger']
+__docformat__ = 'google'
 
 import pathlib
-import re
 import setuptools
 
 def install() -> None:
     """Setuptools based installation script."""
 
-    # Parse top level module for attributes
-    text = pathlib.Path('./vivid/__init__.py').read_text()
-    pattern = r"^[ ]*__([^\d\W]\w*)__[ ]*=[ ]*['\"]([^'\"]*)['\"]"
-    matches = re.finditer(pattern, text, re.M)
-    pkg = {str(m.group(1)): str(m.group(2)) for m in matches}
-
     # Install package
     setuptools.setup(
         name='vivid',
-        version=pkg['version'],
-        description=pkg['description'],
+        version=__version__,
+        description=__description__,
         long_description=pathlib.Path('.', 'README.md').read_text(),
         long_description_content_type='text/markdown',
         classifiers=[
-            'Development Status :: 1 - Planning',
             'Intended Audience :: Developers',
             'Intended Audience :: Science/Research',
             'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
             'Programming Language :: Python :: 3',
     		'Programming Language :: Python :: 3.7',
             'Operating System :: OS Independent',
-            'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
             'Topic :: Software Development :: Libraries :: Python Modules'],
         keywords=(
-            'catalog '
-            'catalog-software '),
-        url=pkg['url'],
-        author=pkg['author'],
-        author_email=pkg['email'],
-        license=pkg['license'],
+            'collaborative-research '
+            'data-science '
+            'machine-learning '
+            'framework '
+            'artificial-intelligence '
+            'artificial-neural-networks '
+            'platform '
+            'python '
+            'python-library '
+            'collaborative-data-science '
+            'automated-machine-learning '),
+        url=__url__,
+        author=__author__,
+        author_email=__email__,
+        license=__license__,
         packages=setuptools.find_packages(exclude=['docs', 'tests']),
-        package_dir={
-            'vivid': 'vivid'},
         python_requires='>=3.7',
         install_requires=[
-            'deet>=0.1.11',
-            'rian>=0.5.582',
-            'brea>=0.0.1']
+            'vivid-db>=0.1.11',
+            'vivid-node>=0.5.582',
+            'vivid-store>=0.0.1']
     )
 
 if __name__ == '__main__':
