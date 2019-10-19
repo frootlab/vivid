@@ -1,5 +1,7 @@
 <div align="center">
-  <img src="https://www.frootlab.org/images/fig/vivid.svg" width=350px>
+  <figure>
+    <img src="https://www.frootlab.org/images/fig/vivid-code-collaboration.svg" width=350px>
+  </figure>
 </div>
 
 Vivid Code
